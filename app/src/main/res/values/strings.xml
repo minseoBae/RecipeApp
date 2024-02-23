@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="title">RecipeBox</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="box">Box</string>
+    <string name="flavor_find">Flavor Finder</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_modify">Edit</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_login">Login</string>
+    <string name="title_logout">Logout</string>
+    <string name="navigation_login">Login</string>
+    <string name="navigation_profile">Profile</string>
+    <string name="like_text">Like %s♥</string>
+    <string name="used_ingredients_count">Number of ingredients used %s</string>
+    <string name="unused_ingredients_count">Number of unused ingredients %s</string>
+    <string name="apiKey">85a5a3b0a42045babce34beb6bb76fa2</string>
+</resources>

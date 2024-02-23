@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewRecipes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/option"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:text="option" />
+
+            <CheckBox
+                android:id="@+id/query"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:text="Food Name" />
+
+            <EditText
+                android:id="@+id/query_item"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone" />
+
+            <CheckBox
+                android:id="@+id/includeIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:text="Ingredient" />
+
+            <EditText
+                android:id="@+id/includeIngredients_item"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone" />
+
+            <CheckBox
+                android:id="@+id/cuisine"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:text="Country"
+                android:textAlignment="viewStart" />
+
+            <RadioGroup
+                android:id="@+id/cuisine_item"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/cuisine1"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Asian" />
+
+                        <RadioButton
+                            android:id="@+id/cuisine4"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="American" />
+
+                        <RadioButton
+                            android:id="@+id/cuisine7"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="British" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/cuisine2"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Chinese" />
+
+                        <RadioButton
+                            android:id="@+id/cuisine5"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="European" />
+
+                        <RadioButton
+                            android:id="@+id/cuisine8"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Japanese" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/cuisine3"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="French" />
+
+                        <RadioButton
+                            android:id="@+id/cuisine6"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Korean" />
+
+                        <RadioButton
+                            android:id="@+id/cuisine9"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Mexican" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/diet"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:text="For Diet"
+                android:textAlignment="viewStart" />
+
+            <RadioGroup
+                android:id="@+id/diet_item"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/diet1"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Gluten Free" />
+
+                        <RadioButton
+                            android:id="@+id/diet4"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Ketogenic" />
+
+                        <RadioButton
+                            android:id="@+id/diet7"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Vegetarian" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/diet2"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Lacto" />
+
+                        <RadioButton
+                            android:id="@+id/diet5"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Ovo" />
+
+                        <RadioButton
+                            android:id="@+id/diet8"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Vegan" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/diet3"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Pescetarian" />
+
+                        <RadioButton
+                            android:id="@+id/diet6"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Paleo" />
+
+                        <RadioButton
+                            android:id="@+id/diet9"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Whole30" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/intolerances"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:text="Remove ingredients " />
+
+            <RadioGroup
+                android:id="@+id/intolerances_item"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/intolerances1"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Peanut" />
+
+                        <RadioButton
+                            android:id="@+id/intolerances4"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Egg" />
+
+                        <RadioButton
+                            android:id="@+id/intolerances7"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Seafood" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/intolerances2"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Tree Nut" />
+
+                        <RadioButton
+                            android:id="@+id/intolerances5"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Sulfite" />
+
+                        <RadioButton
+                            android:id="@+id/intolerances8"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Gluten" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/intolerances3"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Sesame" />
+
+                        <RadioButton
+                            android:id="@+id/intolerances6"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Shellfish" />
+
+                        <RadioButton
+                            android:id="@+id/intolerances9"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Wheat" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:text="Type"
+                android:textAlignment="viewStart" />
+
+            <RadioGroup
+                android:id="@+id/type_item"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/type1"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="main course" />
+
+                        <RadioButton
+                            android:id="@+id/type4"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="bread" />
+
+                        <RadioButton
+                            android:id="@+id/type7"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="marinade" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/type2"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="side dish" />
+
+                        <RadioButton
+                            android:id="@+id/type5"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="breakfast" />
+
+                        <RadioButton
+                            android:id="@+id/type8"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="dessert" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/type3"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="soup" />
+
+                        <RadioButton
+                            android:id="@+id/type6"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="salad" />
+
+                        <RadioButton
+                            android:id="@+id/type9"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="drink" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/maxReadyTime"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:text="Ready For Minute"
+                android:textAlignment="viewStart" />
+
+            <SeekBar
+                android:id="@+id/maxReadyTime_item"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:max="100"
+                android:visibility="gone" />
+
+            <CheckBox
+                android:id="@+id/sort"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:text="Sort For Asc"
+                android:textAlignment="viewStart" />
+
+            <RadioGroup
+                android:id="@+id/sort_item"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/sort1"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="popularity" />
+
+                        <RadioButton
+                            android:id="@+id/sort4"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="price" />
+
+                        <RadioButton
+                            android:id="@+id/sort7"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="time" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/sort2"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="total-fat" />
+
+                        <RadioButton
+                            android:id="@+id/sort5"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="caffeine" />
+
+                        <RadioButton
+                            android:id="@+id/sort8"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="protein" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/sort3"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="healthiness" />
+
+                        <RadioButton
+                            android:id="@+id/sort6"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="random" />
+
+                        <RadioButton
+                            android:id="@+id/sort9"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="meta-score" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/input"
+                android:layout_width="331dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="Search" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewRecipes"
+        android:layout_width="410dp"
+        android:layout_height="330dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"></androidx.recyclerview.widget.RecyclerView>
+
+    <ImageButton
+        android:id="@+id/btn_back6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left" />
+</androidx.constraintlayout.widget.ConstraintLayout>

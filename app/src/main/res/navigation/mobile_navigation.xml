@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_profile">
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.recipeapp.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_modify"
+            app:destination="@id/navigation_modify" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_modify"
+        android:name="com.example.recipeapp.ModifyFragment"
+        android:label="@string/title_modify"
+        tools:layout="@layout/fragment_modify" >
+        <action
+            android:id="@+id/action_navigation_modify_to_navigation_favorite"
+            app:destination="@id/navigation_favorite" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.example.recipeapp.FavoriteFragment"
+        android:label="@string/title_favorite"
+        tools:layout="@layout/fragment_favorite">
+    </fragment>
+</navigation>
